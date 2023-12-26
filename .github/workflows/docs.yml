@@ -32,7 +32,7 @@ jobs:
         run: npm install markdown-it-katex --save
 
       - name: Build 🏗️
-        run: yarn build
+        run: export NODE_OPTIONS=--openssl-legacy-provider; yarn build
         env:
           NODE_ENV: production
 
