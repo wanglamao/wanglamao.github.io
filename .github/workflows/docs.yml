@@ -34,7 +34,7 @@ jobs:
       - name: Build 🏗️
         run: export NODE_OPTIONS=--openssl-legacy-provider; yarn build
         env:
-          NODE_ENV: production
+          NODE_ENV: production 
 
       - name: Deploy to GH Pages 🚀
         if: ${{ github.event_name != 'pull_request' }}
