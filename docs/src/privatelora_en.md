@@ -9,7 +9,6 @@ tagline: Generative AI Privatization For The General Public
 
 Yiming Wang, Yu Lin, Xiaodong Zeng, Guannan Zhang
 
-Ant Group, Shanghai, China
 
 [Paper](https://arxiv.org/abs/2311.14030)  [Code](https://github.com/alipay/private_llm) [Demo](https://github.com/alipay/private_llm) [中文版本](./index.md)
 

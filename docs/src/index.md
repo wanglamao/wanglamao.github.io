@@ -6,7 +6,6 @@ tagline: PrivateLoRA：面向大众的生成式AI私有化方案
 
 王一鸣，林宇，曾晓东，张冠男
 
-蚂蚁集团
 
 [论文](https://arxiv.org/abs/2311.14030)  [代码](https://github.com/alipay/private_llm) [Demo](https://github.com/alipay/private_llm) [English Version](./privatelora_en.md)
 
