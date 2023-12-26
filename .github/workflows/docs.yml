@@ -2,14 +2,12 @@ name: Deploy docs
 
 on:
   push:
-    branches: main
-    paths:
-      - "docs/**"
+    branches: ["main"]
+
+  workflow_dispatch:
 
   pull_request:
-    branches: main
-    paths:
-      - "docs/**"
+    branches: ["main"]
 
 defaults:
   run:
