@@ -5,12 +5,11 @@ tagline: Generative AI Privatization For The General Public
 ---
 
 
-<!-- # PrivateLoRA for Large Language Model Privatization -->
 
 Yiming Wang, Yu Lin, Xiaodong Zeng, Guannan Zhang
 
 
-[Paper](https://arxiv.org/abs/2311.14030)  [Code](https://github.com/alipay/private_llm) [Demo](https://github.com/alipay/private_llm) [中文版本](./index.md)
+[Paper](https://arxiv.org/abs/2311.14030)  [Code](https://github.com/alipay/private_llm) [Demo](https://github.com/alipay/private_llm/tree/main/demo) [中文版本](./privatelora.md)
 
 
 

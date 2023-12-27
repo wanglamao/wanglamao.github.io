@@ -13,7 +13,7 @@ module.exports = {
   description: description,
 
 
-  base: `./`,
+  base: `/${name}/`,
   extendMarkdown(md) {
     md.set({ html: true })
     md.use(require("markdown-it-katex"))

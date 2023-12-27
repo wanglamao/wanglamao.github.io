@@ -3,11 +3,11 @@ home: true
 heroText: 像自己手机一样隐私又个人化的AI
 tagline: PrivateLoRA：面向大众的生成式AI私有化方案
 ---
-
+ 
 王一鸣，林宇，曾晓东，张冠男
 
 
-[论文](https://arxiv.org/abs/2311.14030)  [代码](https://github.com/alipay/private_llm) [Demo](https://github.com/alipay/private_llm) [English Version](./privatelora_en.md)
+[论文](https://arxiv.org/abs/2311.14030)  [代码](https://github.com/alipay/private_llm) [Demo](https://github.com/alipay/private_llm/tree/main/demo) [English Version](./private_lora/privatelora_en.md)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 在吴恩达老师的TED TALK[“AI如何助力任何商业形式”](https://www.youtube.com/watch?v=reUZRyXxUs4)中，几百年前的读书写字被拿来与如今的AI技术进行了类比。
@@ -15,14 +15,15 @@ tagline: PrivateLoRA：面向大众的生成式AI私有化方案
 其次，一旦实现普及化，两者都能极大推动人类社会进步。
 
 <figure style="text-align: center;">
-<img src="./ai_longtail.jpg" alt="AI的长尾问题" width=480 >
+<img src="./private_lora/ai_longtail.jpg" alt="AI的长尾问题" width=480 >
 <figcaption style="text-align: center;">长尾需求市场规模小，无法支撑昂贵AI系统的构建</figcaption>
 </figure>
+
 对21世纪的我们来说，读书与写字的重要性已无需赘述，AI在各种领域也已经创造了极大的价值，以大语言模型为代表的生成式AI更为助力每一个个体提供了可能。
 但是大模型背后的云服务能接收和存储完整的用户交互历史，对个人隐私的顾虑让我们使用大模型时心存芥蒂；公共的模型参数不包含个人偏好和私域知识，面对深层次的个人化需求时，我们根本就不考虑用大模型来解决。
 
 <figure style="text-align: center;">
-<img src="./privatelora.png" alt="AI的长尾问题" width=480 >
+<img src="./private_lora/privatelora.png" alt="AI的长尾问题" width=480 >
 <figcaption style="text-align: center;">PrivateLoRA联动了云计算和边缘设备，提供了私有化模型才有的隐私保护和深度个人化。</figcaption>
 </figure>
 
@@ -47,7 +48,7 @@ tagline: PrivateLoRA：面向大众的生成式AI私有化方案
 
 
 <figure style="text-align: center;">
-<img src="./overview.gif" alt="Low Rank Residual Transmission" width=480>
+<img src="./private_lora/overview.gif" alt="Low Rank Residual Transmission" width=480>
 <figcaption style="text-align: center;">PrivateLoRA不需要高端硬件就能实现大语言模型的私有化，帮你隐私和效率全都要。</figcaption>
 </figure>
 
@@ -93,7 +94,7 @@ $$4096\times 2\times 32\times 16\sim4.19\text{Mb}.$$
 ### 低秩残差传输(Low Rank Residual Transmission)
 
 <figure style="text-align: center;">
-<img src="./lrrt.gif" alt="Low Rank Residual Transmission" width=480>
+<img src="./private_lora/lrrt.gif" alt="Low Rank Residual Transmission" width=480>
 <figcaption style="text-align: center;">低秩残差传输降低95%以上的通讯开销。在公网环境的网络延时可以与内网环境不相上下。</figcaption>
 </figure>
 
@@ -142,7 +143,7 @@ PrivateLoRA的设计目标是使用智能手机在日常网络条件下就能达
 手机端需要的计算量也比运行完整模型低得多。在7B模型上，前馈1个token的计算量是全尺寸模型的不到2%，在30B模型上计算量不到原来的0.7%。此外，由于端上都是线性模块，不必计算自注意力的Softmax，端上的算力利用率会高很多。
 
 <figure style="text-align: center;">
-<img src="./resource.jpg"  alt="Low Rank Residual Transmission" width=300 >
+<img src="./private_lora/resource.jpg"  alt="Low Rank Residual Transmission" width=300 >
 <figcaption style="text-align: center;">模型所需内存和前馈一个token需要的计算量。标注PL的是指PrivateLoRA</figcaption>
 </figure>
 
@@ -168,7 +169,7 @@ $TPS^{Decoder}_{C}$和$TPS^{LM\ Head}_{D}$可以在GPU和手机上实机测量�
 
 
 <figure style="text-align: center;">
-<img src="./7b_speed.jpg"  alt="Low Rank Residual Transmission" >
+<img src="./private_lora/7b_speed.jpg"  alt="Low Rank Residual Transmission" >
 <figcaption style="text-align: center;">以7B为主干时PrivateLoRA的吞吐率远超纯端方案。 </figcaption>
 </figure>
 
@@ -177,7 +178,7 @@ $TPS^{Decoder}_{C}$和$TPS^{LM\ Head}_{D}$可以在GPU和手机上实机测量�
 作为参考，LLaMA 2-7B在手机上的预填速度54.3tps，解码速度为5.7tps。不论是预填阶段还是解码阶段，PrivateLoRA都远超纯端方案。$r_{C2D}=r_{D2C}=64$时，生成速度能达到27.8tps，为纯端速度的486%，GPU速度(37.1tps)的74.9%。
 
 <figure style="text-align: center;">
-<img src="./13_33b_speed.jpg"  alt="Low Rank Residual Transmission" >
+<img src="./private_lora/13_33b_speed.jpg"  alt="Low Rank Residual Transmission" >
 <figcaption style="text-align: center;">模型尺寸越大，吞吐率损耗越低。 </figcaption>
 </figure>
 
@@ -200,7 +201,7 @@ $TPS^{Decoder}_{C}$和$TPS^{LM\ Head}_{D}$可以在GPU和手机上实机测量�
 $$M_{S}=\frac{TPS}{TPS_{C}}(M-M_{NT}),$$
 其中，$TPS_C$是GPU上的生成速度，$M_{NT}$是没经过微调的评测成绩。
 <figure style="text-align: center;">
-<img src="./table.jpg" alt="Low Rank Residual Transmission">
+<img src="./private_lora/table.jpg" alt="Low Rank Residual Transmission">
 <figcaption style="text-align: center;">PrivateLoRA在各种评测集上提升了成绩，在不少任务上与LoRA相平。带*星的评测成绩指微调后不如原来。</figcaption>
 </figure>
 
@@ -215,7 +216,7 @@ $$M_{S}=\frac{TPS}{TPS_{C}}(M-M_{NT}),$$
 demo模拟了用户在个人设备上向模型问了GSM8K中的一道题目，边缘设备联动云端实现了又快又好的生成。
 
 <figure style="text-align: center;">
-<img src="./demo_gen.gif" >
+<img src="./private_lora/demo_gen.gif" >
 <figcaption style="text-align: center;">Demo中边缘设备侧只使用cpu进行少量运算就可以使模型变得更“聪明”，生成速率是纯cpu运行的10倍以上。</figcaption>
 </figure>
 

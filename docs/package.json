@@ -1,15 +1,15 @@
 {
-  "name": "vuepress-quickstart",
+  "name": "wanglamao",
   "version": "0.2.0",
   "scripts": {
     "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider; vuepress build src"
   },
   "devDependencies": {
     "vuepress": "^1.5.3"
   },
-  "description": "Starter template for a VuePress project - including CI for GH Pages hosting",
-  "author": "MichaelCurrin",
+  "description": "PrivateLoRA",
+  "author": "wanglamao",
   "license": "MIT",
   "dependencies": {
     "markdown-it-katex": "^2.0.3"
